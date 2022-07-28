@@ -8,10 +8,15 @@ app.use(cors());
 // setup routes...
 app.get('/test', (req, res) => {
     res.send('Wow, it actually worked.')
-})
+});
 app.get('/another-one', (req, res) => {
     res.send('this one works, too!')
-})
+});
+
+app.delete('/delete-one', (req, res) => {
+    Array.splice(3,1)
+});
+
 
 exports.api = functions.https.onRequest(app);
 
